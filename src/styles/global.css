@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --section-spacing: 60px;
+}
+
+.y-space {
+    padding-block: var(--section-spacing);
+}

@@ -1,0 +1,79 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+<header class="header-nav">
+    <span id="nav-label" hidden>Navigation</span>
+    <nav id="nav" class="flex justify-between items-center gap-10" aria-labelledby="nav-label">
+        <a href=""><Icon name="am-logo" class="text-4xl"/></a>
+        <btn id="burger-btn" class="burger-btn" aria-expanded="false">
+            <span class=" block bg-black h-1.5 w-8"></span>
+            <span class=" block bg-black h-1.5 w-8"></span>
+            <span class=" block bg-black h-1.5 w-8"></span>
+        </btn>
+        <div role="dialog" class="nav-menu items-center gap-10" aria-labelledby="nav-label">
+            <ul class="flex flex-col lg:flex-row gap-10 capitalize">
+                <li><a href="#">home</a></li>
+                <li><a href="#">work</a></li>
+                <li><a href="#">about</a></li>
+            </ul>
+            <a href="#" class="border-2 rounded-lg px-10 py-3"> Contact</a>
+        </div>
+    </nav>
+</header>
+
+
+<style>
+    header {
+        .nav-menu {
+            display: flex;
+        }
+
+        @media (width < 1024px)  {            
+            .nav-menu {
+                position: fixed;
+                display: none;
+                flex-direction: column;
+                inset: 0;
+                background-color: red;
+                align-self: center;
+
+            }
+            .burger-btn {
+
+            }
+        }
+        @media (width >= 1024px) {
+            .burger-btn {
+                display: none;
+            }
+        }
+    }
+    .menu-open {
+        position: fixed;
+        inset: 0;
+        background-color: red;
+        
+        .nav-menu {
+            display: flex;
+        }
+    }
+</style>
+
+
+<script>
+    const navLinks = document.querySelector(".nav-menu") as HTMLElement
+    const header = document.querySelector(".header-nav") as HTMLElement
+    const burgerBtn = document.getElementById("burger-btn")
+    function openMobileMenu() {
+        if(burgerBtn?.getAttribute('aria-expanded') === 'false') {
+            burgerBtn?.setAttribute('aria-expanded', 'true');
+            header.classList.toggle("menu-open")
+        }
+        else {
+            burgerBtn?.setAttribute('aria-expanded', 'false');
+            header.classList.toggle("menu-open")
+        }
+    }
+
+    burgerBtn?.addEventListener("click", openMobileMenu)
+</script>
