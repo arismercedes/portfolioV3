@@ -1,20 +1,43 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import Project from "../components/Project.astro"
+import Grid from "../components/Grid.astro"
 ---
 <BaseLayout>
 	<main>
-		<section>
-			<h1>Welcome! I'm Aris Mercedes.</h1>
-			<p> Dive into my portfolio to explore vibrant designs that blend creativity with precision. Discover how my expertise can contribute to the success of your creative team.</p>
-			<a href="#">View Work</a>
+		<section class="hero-section flex">
+			<div class="m-auto max-w-screen-xl w-full">
+				<p class="text-2xl mb-[.5em]">Hi! I'm Aris Mercedes</p>
+				<h1 class="text-7xl font-bold">Graphic Designer</h1>
+				<p class="text-xl mt-[1.5em] mb-[2em] max-w-full w-[60ch]"> Dive into my portfolio to explore vibrant designs that blend creativity with precision. Discover how my expertise can contribute to the success of your creative team.</p>
+				<a href="#">View Work</a>
+			</div>
 		</section>
 
-		<section>
-			
+		<section class="portfolio-section bg-slate-50">
+			<h2 class="mb-12 font-semibold text-3xl sm:text-5xl text-center">Featured Work</h2>
+			<Grid classes="f-grid max-w-screen-xl m-auto">
+				<Project />
+				<Project />
+				<Project />
+				<Project />
+				<Project />
+			</Grid>
+
 		</section>
 
-		<section>
-			
+		<section class="">
+			<h2 class="mb-12 font-semibold text-3xl sm:text-5xl text-center">Contact</h2>
 		</section>
 	</main>
 </BaseLayout>
+
+<style lang="scss">
+	section {
+		// max-width: 1280px;
+		margin-inline: auto;
+	}
+	.hero-section {
+		height: calc(100vh - 116px);
+	}
+</style>

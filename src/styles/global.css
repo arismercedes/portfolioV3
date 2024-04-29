@@ -5,7 +5,26 @@
 :root {
     --section-spacing: 60px;
 }
-
 .y-space {
     padding-block: var(--section-spacing);
+}
+
+section, footer, header {    
+    padding-inline: 1.5rem;
+    padding-block: 8rem;
+    @media screen and (min-width: 768px) {
+        padding-inline: 3rem;
+    }
+    @media screen and (min-width: 1536px) {
+        padding-inline: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .f-grid .project:first-of-type {
+        grid-column: span 2;
+    }
+    .f-grid .project:first-of-type img {
+        aspect-ratio: 16/9;
+    }
 }
