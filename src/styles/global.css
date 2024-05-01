@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --section-spacing: 60px;
+@layer base {
+    :root {
+        --color-acent: rgb(237, 29, 46);
+    }
 }
+/* :root {
+    --section-spacing: 60px;
+} */
 .y-space {
     padding-block: var(--section-spacing);
 }

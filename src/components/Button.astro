@@ -1,0 +1,39 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes <"button"> {
+    url?: string;
+    isfilled?: boolean;
+    classes?: string;
+    size?: "sm" | "md" | "lg";
+    theme?: "white";
+}
+const {url,classes, isfilled, size="md"} = Astro.props
+---
+<a href={url} class:list={[classes,size, { filled: isfilled }]}>
+    <slot />
+</a>
+
+<style lang="scss">
+    a {
+        display: inline-flex;
+        border: 2px solid;
+        border-radius: .5em;
+        padding-inline: 1.7em;
+        padding-block: .6em;
+        text-transform: uppercase;
+    }
+    .sm {
+        font-size: .9rem;
+    }
+    .md {
+        font-size: 1.1rem;
+    }
+    .lg {
+        font-size: 1.3rem;
+    }
+    .filled {
+        @apply bg-crimson-600;
+    }
+    
+</style>

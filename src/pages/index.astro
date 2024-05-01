@@ -2,15 +2,17 @@
 import BaseLayout from "../layouts/BaseLayout.astro"
 import Project from "../components/Project.astro"
 import Grid from "../components/Grid.astro"
+import Button from "../components/Button.astro"
 ---
 <BaseLayout>
 	<main>
 		<section class="hero-section flex">
 			<div class="m-auto max-w-screen-xl w-full">
 				<p class="text-2xl mb-[.5em]">Hi! I'm Aris Mercedes</p>
-				<h1 class="text-7xl font-bold">Graphic Designer</h1>
+				<h1 class="text-7xl font-bold text-crimson-600">Graphic Designer</h1>
 				<p class="text-xl mt-[1.5em] mb-[2em] max-w-full w-[60ch]"> Dive into my portfolio to explore vibrant designs that blend creativity with precision. Discover how my expertise can contribute to the success of your creative team.</p>
 				<a href="#">View Work</a>
+				<Button size="sm" classes="" isfilled>small button</Button><Button>medium buton</Button><Button size="lg">large button</Button>
 			</div>
 		</section>
 
