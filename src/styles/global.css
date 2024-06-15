@@ -4,7 +4,9 @@
 
 @layer base {
     :root {
-        --color-acent: rgb(237, 29, 46);
+        --light: 255, 255, 255;
+        --dark: 24, 24, 27;
+        --primary: 237, 29, 46;
     }
 }
 /* :root {
@@ -26,10 +28,12 @@ section, footer, header {
 }
 
 @media screen and (min-width: 768px) {
-    .f-grid .project:first-of-type {
+    .f-grid *:first-of-type {
         grid-column: span 2;
     }
-    .f-grid .project:first-of-type img {
+
+
+    .f-grid img:first-of-type {
         aspect-ratio: 16/9;
     }
 }

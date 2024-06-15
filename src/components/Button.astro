@@ -4,24 +4,45 @@ import type { HTMLAttributes } from 'astro/types'
 interface Props extends HTMLAttributes <"button"> {
     url?: string;
     isfilled?: boolean;
+    isnaked?: boolean;
     classes?: string;
     size?: "sm" | "md" | "lg";
-    theme?: "white";
+    theme?: string;
 }
-const {url,classes, isfilled, size="md"} = Astro.props
+const {url,classes, isfilled, isnaked, size="md", theme="dark", ...rest} = Astro.props
+
+const background = `var(--${theme})`;
+const foreground = theme === "light" ? "var(--primary)"
+    : theme === "dark" ? "var(--light)"
+    : "var(--light)";
 ---
-<a href={url} class:list={[classes,size, { filled: isfilled }]}>
+<a href={url} class:list={["btn", classes, size, { filled: isfilled }, { naked: isnaked }]}{theme}{...rest}>
     <slot />
 </a>
 
-<style lang="scss">
+<style lang="scss"
+    define:vars={{
+        foreground,
+        background,
+    }}
+>
     a {
+        --bkg: var(--background);
+        --color: var(--foreground);
+
+        background-color: var(--bkg);
+        color: rgb(var(--bkg));
+        
         display: inline-flex;
-        border: 2px solid;
+        border: 2px solid rgb(var(--bkg));
         border-radius: .5em;
         padding-inline: 1.7em;
         padding-block: .6em;
+        font-weight: 600;
         text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out;
+
     }
     .sm {
         font-size: .9rem;
@@ -33,7 +54,52 @@ const {url,classes, isfilled, size="md"} = Astro.props
         font-size: 1.3rem;
     }
     .filled {
-        @apply bg-crimson-600;
+        background-color: rgb(var(--bkg));
+        color: rgb(var(--color));
+        transition: background-color .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out;
+    }
+    .naked {
+        position: relative;
+        background-color: transparent;
+        color: rgb(var(--bkg));
+        border: none;
+        padding: unset;
+        transition: color .3s ease-in-out;
+        
+    }
+    .naked::after {
+        content: " ";
+        position: absolute;
+        display: block;
+        bottom: -.25em;
+        height: 2px;
+        width: 2em;
+        background-color: rgb(var(--bkg));
+        transition: width .3s ease-in-out, background-color .3s ease-in-out;
+    }
+    a:hover {
+        transition: background-color .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out;
+        transform: translateY(-.3rem);
+        box-shadow: 0 4px 10px 1px rgba(var(--bkg), 0.5);
+        background-color: rgb(var(--bkg));
+        color: rgb(var(--color));
+    }
+
+    .naked:hover {
+        transition: background-color .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out;
+        transform: unset;
+        box-shadow: unset;
+        background-color: unset;
+        color: rgb(var(--primary));
+    }
+    .naked:hover.naked::after{
+        width: calc(100% + .5em);
+        background-color: rgb(var(--primary));
+    }
+    .filled:hover {
+        transition: background-color .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out;
+        background-color: transparent;
+        color: rgb(var(--bkg));
     }
     
 </style>
