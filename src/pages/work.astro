@@ -1,8 +1,33 @@
 --- 
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro"
+import Grid from "../components/Grid.astro"
+import { getCollection, getEntry } from 'astro:content';
+
+const allProjects = await getCollection('projects');
 
 ---
 
 <BaseLayout>
-    
+    <div class="py-24 mb-10">
+        <Grid classes="max-w-screen-xl m-auto">
+            {allProjects.map((project) => (
+                
+                <div class="relative">
+                    <Image class="h-full object-cover aspect-[4/3]" src={Astro.url.origin + "/" + project.data.thumbnail.src} alt={project.data.thumbnail.alt} width="800" height="800"/>
+                    <a class="opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out" href={"/projects/" + project.data.url}>
+                        <div class="absolute grid place-content-center  bg-crimson-500 w-full h-full top-0">
+                            <p class="font-semibold text-3xl text-white">{project.data.title}</p>
+                        </div>
+                    </a>
+                </div>
+            ))}
+        </Grid>
+    </div>
 </BaseLayout>
+
+<style>
+    .work-project {
+        
+    }
+</style>

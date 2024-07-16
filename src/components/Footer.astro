@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
-import Button from "../components/Button.astro"
+import LinkButton from "../components/LinkButton.astro"
 
 const indexPath = Astro.url.origin;
 
@@ -21,7 +21,7 @@ let currentYear = currentDate.getFullYear();
             <li><a href={indexPath + "/about"}>About</a></li>
             <li><a href={indexPath + "/contact"}>Contact</a></li>
         </ul>
-        <Button classes="self-center md:self-baseline" url={indexPath + "/contact"} theme='light'>Say Hi</Button>
+        <LinkButton classes="self-center md:self-baseline" url={indexPath + "/contact"} theme='light'>Say Hi</LinkButton>
     </div>
 </footer>
 

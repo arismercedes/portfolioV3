@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
-import Button from "../components/Button.astro"
+import LinkButton from "../components/LinkButton.astro"
 const indexPath = Astro.url.origin;
 ---
 <header class="header-nav py-8 max-w-screen-xl m-auto">
@@ -18,7 +18,7 @@ const indexPath = Astro.url.origin;
                 <li><a href={indexPath + "/work"} class="font-semibold hover:text-crimson-600 transition-colors duration-300 ease-in-out">work</a></li>
                 <li><a href={indexPath + "/about"} class="font-semibold hover:text-crimson-600 transition-colors duration-300 ease-in-out">about</a></li>
             </ul>
-            <Button classes="self-center md:self-baseline" url="/contact" theme='dark' size='sm'>Contact</Button>
+            <LinkButton classes="self-center md:self-baseline" url="/contact" theme='dark' size='sm'>Contact</LinkButton>
         </div>
     </nav>
 </header>
@@ -55,7 +55,7 @@ const indexPath = Astro.url.origin;
         inset: 0;
         @apply bg-zinc-900;
         color: white;
-        
+        z-index: 10;
         .nav-menu {
             display: flex;
         }

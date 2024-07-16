@@ -3,9 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 import Project from "../components/ProjectCard.astro"
 import Grid from "../components/Grid.astro"
 import Button from "../components/Button.astro"
+import LinkButton from "../components/LinkButton.astro"
+import { Image } from "astro:assets";
+
 import ProjectCard from "../components/ProjectCard.astro"
 
 import { getCollection, getEntry } from 'astro:content';
+import ContactForm from "../components/ContactForm.astro"
 
 const allProjects = await getCollection('projects');
 const numberOfProjects = 5;
@@ -13,13 +17,15 @@ const featuredProjects = allProjects.slice(0,numberOfProjects);
 ---
 <BaseLayout>
 	<main>
-		<section class="hero-section flex">
-			<div class="m-auto max-w-screen-xl w-full">
+		<section class="hero-section flex flex-col lg:flex-row relative gap-10 overflow-hidden  max-w-screen-2xl px-10 py-0 pt-20 md:pt-0">
+			<div class=" md:w-[65%] self-center">
 				<p class="text-2xl md:text-3xl mb-[.5em]">Hi! I'm Aris Mercedes</p>
-				<h1 class="text-4xl md:text-8xl font-bold text-crimson-600">Graphic Designer <br><span class="text-black">Based in Dallas TX</span></h1>
-				<p class="text-md md:text-xl mt-[1.5em] mb-[2em] max-w-full w-[60ch]"> Dive into my portfolio to explore vibrant designs that blend creativity with precision. Discover how my expertise can contribute to the success of your creative team.</p>
-				<Button classes="" url="#work" theme="primary">View Work</Button>
+				<h1 class="text-4xl sm:text-7xl  font-bold text-crimson-600">Graphic Designer <br><span class="text-black">Based in Dallas TX</span></h1>
+				<p class="text-md md:text-xl mt-[1.5em] mb-[2em]"> Dive into my portfolio to explore vibrant designs that blend creativity with precision. Discover how my expertise can contribute to the success of your creative team.</p>
+				<LinkButton classes="" url="#work" theme="primary">View Work</LinkButton>
 			</div>
+			<Image class="m-auto bottom-0 self-end w-[250px] sm:w-[350px] md:w-[600px]" src={Astro.url.origin + "/" + "src/assets/portrait01.png"} alt="Portrait of Aris Mercedes" width="600" height="899"/>
+			
 		</section>
 
 		<section class="portfolio-section bg-slate-50">
@@ -32,8 +38,20 @@ const featuredProjects = allProjects.slice(0,numberOfProjects);
 
 		</section>
 
-		<section class="">
-			<h2 class="mb-12 font-bold text-3xl sm:text-5xl text-center">Contact</h2>
+		<section class="m-auto max-w-screen-xl w-full">
+			<div class="flex flex-col lg:flex-row gap-16">
+				<div class="lg:w-[50%]">
+					<h2 class="mb-6 font-bold text-3xl sm:text-5xl ">Let's Collaborate!</h2>
+
+					<p class="md:text-xl">Got a creative challenge or a fantastic project in mind? Whether you're looking to create stunning visual content, design an eye-catching brochure, or revamp your entire brand, I'm here to help. With a passion for design and a knack for turning visions into reality, I'm ready to tackle any project you throw my way.</p>
+					<br>
+					<p class="md:text-xl">Reach out and share your ideas with me—together, we can brainstorm, plan, and create something truly magical. Fill out the form and let's embark on this creative journey together. Let's make magic happen! 🌟</p>
+				</div>
+				<div class="grow">
+					<h2 class="mb-6 font-bold text-xl sm:text-3xl">Get In Touch</h2>
+					<ContactForm></ContactForm>
+				</div>
+			</div>
 		</section>
 	</main>
 </BaseLayout>
@@ -44,6 +62,6 @@ const featuredProjects = allProjects.slice(0,numberOfProjects);
 		margin-inline: auto;
 	}
 	.hero-section {
-		height: calc(100vh - 116px);
+		// height: calc(100vh - 116px);
 	}
 </style>

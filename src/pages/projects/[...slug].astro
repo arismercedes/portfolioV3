@@ -22,33 +22,34 @@ const { Content } = await entry.render();
 <BaseLayout>
     <div class="h-64 md:h-96 relative">
         <img class="w-full" src={entry.data.images[0].src} alt="">
-        <div class="red-overlay absolute top-0 w-full h-full 0 flex flex-col justify-center items-center text-white">
+        <div class="gray-overlay absolute top-0 w-full h-full 0 flex flex-col justify-center items-center text-white">
             <p class="font-semibold text-md md:text-lg uppercase">{entry.data.type}</p>
             <h1 class="font-bold  text-2xl md:text-6xl">{entry.data.title}</h1>
         </div>
     </div>
-    <div class="bg-slate-50 py-32">
-        <div class="flex flex-col md:flex-row gap-20 max-w-screen-xl m-auto md:text-xl">
+    
+    <div class="bg-slate-50 py-32 main-projects">
+        <div class="flex flex-col md:flex-row gap-10 max-w-screen-xl m-auto md:text-xl">
             <div class="grow">
                 <p class="font-bold mb-4">Overview</p>
                 <div class="">
                     <Content />
                 </div>
             </div>
-            <div class="">
+            <div>
                 <p class="font-bold mb-4">Services</p>
                 <ul >    
-                    {entry.data.services.map((service) => (
-                        <li>{service}</li>
+                    {entry.data.services.map((service: string) => (
+                        <li class="w-[25ch]">{service}</li>
                     ))}
                 </ul>
             </div>
         </div>
     </div>
-    <Grid classes="f-grid max-w-screen-xl m-auto my-32">
-        {entry.data.images.map((image) => (
-            <img src={image.src} alt="">
-        ))}
+    <Grid classes="f-grid max-w-screen-xl m-auto my-32 main-projects">
+        {entry.data.images.map((image: { src: string; alt: string; }) => (
+        <img src={image.src} alt={image.alt}>
+    ))}
     </Grid>
 </BaseLayout>
 
@@ -58,18 +59,16 @@ const { Content } = await entry.render();
        width: 100%;
        height: 100%;
     }
-    .red-overlay {
-        border-width: 10px;
+    .gray-overlay {
+        scale: 1.0;
+        border-width: 1px;
         border-style: solid;
         border-image-source: linear-gradient(
         180deg,
         hsl(0deg 0% 100% / 1) 0%,
-        hsl(355deg 82% 75% /.9) 30%,
-        hsl(355deg 82% 49% / .9) 97%
+        hsla(0, 0%, 73%, 0.9) 30%,
+        hsl(0deg 0% 49% / .9) 97%
         );
         border-image-slice: fill 1;
-    }
-    .project-cover {
-        background-image: ;
     }
 </style>

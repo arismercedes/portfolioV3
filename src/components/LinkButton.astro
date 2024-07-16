@@ -8,9 +8,8 @@ interface Props extends HTMLAttributes <"button"> {
     classes?: string;
     size?: "sm" | "md" | "lg";
     theme?: string;
-    type?: "submit" | "button";
 }
-const {classes, isfilled, isnaked, size="md",type="button", theme="dark", ...rest} = Astro.props
+const {url,classes, isfilled, isnaked, size="md", theme="dark", ...rest} = Astro.props
 
 const background = `var(--${theme})`;
 const foreground = theme === "light" ? "var(--primary)"
@@ -18,9 +17,9 @@ const foreground = theme === "light" ? "var(--primary)"
     : "var(--light)";
 
 ---
-<button class:list={["btn", classes, size, { filled: isfilled }, { naked: isnaked }]}{theme}{...rest}>
+<a href={url} class:list={["btn", classes, size, { filled: isfilled }, { naked: isnaked }]}{theme}{...rest}>
     <slot />
-</button>
+</a>
 
 <style lang="scss"
     define:vars={{
@@ -28,7 +27,7 @@ const foreground = theme === "light" ? "var(--primary)"
         background,
     }}
 >
-    button {
+    a {
         --bkg: var(--background);
         --color: var(--foreground);
 
@@ -79,7 +78,7 @@ const foreground = theme === "light" ? "var(--primary)"
         background-color: rgb(var(--bkg));
         transition: width .3s ease-in-out, background-color .3s ease-in-out;
     }
-    button:hover {
+    a:hover {
         transition: background-color .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out;
         transform: translateY(-.3rem);
         box-shadow: 0 4px 10px 1px rgba(var(--bkg), 0.5);

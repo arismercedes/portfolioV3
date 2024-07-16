@@ -27,6 +27,16 @@ section, footer, header {
     }
 }
 
+.main-projects {
+    padding-inline: 1.5rem;
+    @media screen and (min-width: 768px) {
+        padding-inline: 3rem;
+    }
+    @media screen and (min-width: 1536px) {
+        padding-inline: 0;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .f-grid *:first-of-type {
         grid-column: span 2;
