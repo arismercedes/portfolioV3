@@ -47,7 +47,7 @@ const { Content } = await entry.render();
         </div>
     </div>
     <Grid classes="f-grid max-w-screen-xl m-auto my-32 main-projects">
-        {entry.data.images.map((image: { src: string; alt: string; }) => (
+        {entry.data.images.map((image: { src: any ; alt: string; }) => (
         <Image src={image.src} alt={image.alt} width="1200" height="800"/>
     ))}
     </Grid>
