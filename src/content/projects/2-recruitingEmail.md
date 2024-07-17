@@ -2,18 +2,18 @@
 title: Recruiting Email Campaign
 type: Email and Brochure Design
 url: recruiting-email-campaign
-thumbnail: {src: '../src/assets/email-05.jpg',
+thumbnail: {src: '/src/assets/email-05.jpg',
     alt: 'test 01'}
 images: [
-    {src: '../src/assets/recruiting-email-mockup-tablet.jpg',
+    {src: '/src/assets/recruiting-email-mockup-tablet.jpg',
     alt: 'recruiting email mockup',},
-    {src: '../src/assets/recruiting-email-mockup-phone.jpg',
+    {src: '/src/assets/recruiting-email-mockup-phone.jpg',
     alt: 'recruiting email phone mockup',},
-    {src: '../src/assets/recruiting-email-mockup.jpg',
+    {src: '/src/assets/recruiting-email-mockup.jpg',
     alt: 'recruiting email mockup',},
-    {src: '../src/assets/recruiting-email-mockup-booklet.jpg',
+    {src: '/src/assets/recruiting-email-mockup-booklet.jpg',
     alt: 'recruiting email booklet mockup',},
-    {src: '../src/assets/recruiting-email-benefits-and-perks.jpg',
+    {src: '/src/assets/recruiting-email-benefits-and-perks.jpg',
     alt: 'recruiting email photomanipulation',}
 ]
 services: [Email Design, Print Marketing Design]

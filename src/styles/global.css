@@ -36,6 +36,11 @@ section, footer, header {
         padding-inline: 0;
     }
 }
+.banner-image{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
 
 @media screen and (min-width: 768px) {
     .f-grid *:first-of-type {

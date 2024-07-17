@@ -2,16 +2,16 @@
 title: Intercontinental Hotel Brunchs
 type: Table Tents Design
 url: intercontinental
-thumbnail: {src: '../src/assets/table-tent-mockup-intercontinental-mothers-day.jpg',
+thumbnail: {src: '/src/assets/table-tent-mockup-intercontinental-mothers-day.jpg',
     alt: 'test 01'}
 images: [
-    {src: '../src/assets/table-tent-mockup-intercontinental-mothers-day.jpg',
+    {src: '/src/assets/table-tent-mockup-intercontinental-mothers-day.jpg',
     alt: 'mothers day table tent',},
-    {src: '../src/assets/table-tent-mockup-intercontinental-easter.jpg',
+    {src: '/src/assets/table-tent-mockup-intercontinental-easter.jpg',
     alt: 'easter table tent',},
-    {src: '../src/assets/table-tent-mockup-intercontinental-fathers-day.jpg',
+    {src: '/src/assets/table-tent-mockup-intercontinental-fathers-day.jpg',
     alt: 'fathers day table tent',},
-    {src: '../src/assets/table-tent-mockup-intercontinental-mothers-day-2.jpg',
+    {src: '/src/assets/table-tent-mockup-intercontinental-mothers-day-2.jpg',
     alt: 'mothers day table tent',}
 ]
 services: [Print Marketing Design]

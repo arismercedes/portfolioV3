@@ -1,21 +1,22 @@
 ---
+
 title: Elevate & Connect
 type: Insurance Presentation and Social Media
 url: elevate-and-Connect
-thumbnail: {src: '../src/assets/elevate-and-connect_conference-banner-mockup.jpg',
+thumbnail: {src: './ElevateConnectBanner.jpg',
     alt: 'elevate and connect banner for presentation'}
 images: [
-    {src: '../src/assets/elevate-and-connect_conference-banner-mockup.jpg',
+    {src: './ElevateConnectBanner.jpg',
     alt: 'banner for presentation'},
-    {src: '../src/assets/elevate-and-connect_Presentation-Mockup-5.jpg',
+    {src: './ElevateConnectPresentation01.jpg',
     alt: 'presentation slides',},
-    {src: '../src/assets/elevate-and-connect_Presentation-Mockup-6.jpg',
+    {src: './ElevateConnectPresentation02.jpg',
     alt: 'presentation slides',},
-    {src: '../src/assets/elevate-and-connect_Social-Media-Mockup-Set.jpg',
+    {src: './ElevateConnectSocial01.jpg',
     alt: 'social media posts',},
-    {src: '../src/assets/elevate-and-connect_social-media-mockup.jpg',
+    {src: './ElevateConnectSocial02.jpg',
     alt: 'social media posts',},
-    {src: '../src/assets/elevate-and-connect-flyer-mockup.jpg',
+    {src: './ElevateConnectFlyer.jpg',
     alt: 'companion flyers for the presentation',}
 ]
 services: [Presentation, Social Media Graphics]

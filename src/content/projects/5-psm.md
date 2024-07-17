@@ -2,14 +2,14 @@
 title: PSM
 type: Healthcare Plan Marketing
 url: psm
-thumbnail: {src: '../src/assets/psm_BannerMockup.jpg',
+thumbnail: {src: '/src/assets/psm_BannerMockup.jpg',
     alt: 'test 01'}
 images: [
-    {src: '../src/assets/psm_BannerMockup.jpg',
+    {src: '/src/assets/psm_BannerMockup.jpg',
     alt: 'psm banner',},
-    {src: '../src/assets/psm-wide-banner.jpg',
+    {src: '/src/assets/psm-wide-banner.jpg',
     alt: 'psm banner',},
-    {src: '../src/assets/psm_Flyer-Mockup.jpg',
+    {src: '/src/assets/psm_Flyer-Mockup.jpg',
     alt: 'psm flyer',}
 ]
 services: [Print Marketing Design]

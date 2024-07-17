@@ -2,18 +2,18 @@
 title: QBE Insurance
 type: Insurance Visual Identity
 url: qbe
-thumbnail: {src: '../src/assets/QBE_Flyer.jpg',
+thumbnail: {src: '/src/assets/QBE_Flyer.jpg',
     alt: 'test 01'}
 images: [
-    {src: '../src/assets/qbe-flyer-mockup.jpg',
+    {src: '/src/assets/qbe-flyer-mockup.jpg',
     alt: 'qbe flyer',},
-    {src: '../src/assets/BannerMockup.jpg',
+    {src: '/src/assets/BannerMockup.jpg',
     alt: 'qbe banner',},
-    {src: '../src/assets/QBE_Flyer.jpg',
+    {src: '/src/assets/QBE_Flyer.jpg',
     alt: 'qbe flyer',},
-    {src: '../src/assets/qbe-Poster-Mockup.jpg',
+    {src: '/src/assets/qbe-Poster-Mockup.jpg',
     alt: 'qbe poster',},
-    {src: '../src/assets/QBE_SRO_StandBanner-Mockup.jpg',
+    {src: '/src/assets/QBE_SRO_StandBanner-Mockup.jpg',
     alt: 'qbe standbanner',}
 ]
 services: [Print Marketing Design]

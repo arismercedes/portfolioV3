@@ -14,7 +14,7 @@ const allProjects = await getCollection('projects');
             {allProjects.map((project) => (
                 
                 <div class="relative">
-                    <Image class="h-full object-cover aspect-[4/3]" src={Astro.url.origin + "/" + project.data.thumbnail.src} alt={project.data.thumbnail.alt} width="800" height="800"/>
+                    <Image class="h-full object-cover aspect-[4/3]" src={project.data.thumbnail.src} alt={project.data.thumbnail.alt} width="800" height="800"/>
                     <a class="opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out" href={"/projects/" + project.data.url}>
                         <div class="absolute grid place-content-center  bg-crimson-500 w-full h-full top-0">
                             <p class="font-semibold text-3xl text-white">{project.data.title}</p>

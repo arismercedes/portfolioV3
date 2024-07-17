@@ -1,13 +1,15 @@
 --- 
+import Image from "astro/components/Image.astro"
 import ContactForm from "../components/ContactForm.astro"
 import LinkButton from "../components/LinkButton.astro"
 import Button from "../components/Button.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
+import emailGraphic from "../assets/emailGraphic.jpg"
 ---
 
 <BaseLayout>
     <div class="h-64 md:h-96 relative">
-        <img class="w-full" src={Astro.url.origin + "/" + "src/assets/email-graphic.jpg"} alt="">
+        <Image class="bannerImg w-full" src={emailGraphic} alt="">
         <div class="gray-overlay absolute top-0 w-full h-full 0 flex flex-col justify-center items-center text-white">
             <h1 class="font-bold  text-2xl md:text-6xl">Contact</h1>
         </div>
