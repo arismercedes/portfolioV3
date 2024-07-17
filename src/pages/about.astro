@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { Icon } from 'astro-icon/components'
 
 import BaseLayout from "../layouts/BaseLayout.astro"
-
+import portrait03 from "../assets/portrait03.jpg"
 ---
 
 <BaseLayout>
@@ -19,7 +19,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
                     
                 <p class="mb-4">When I'm not designing, you'll probably find me exploring the latest tech trends, experimenting with new design techniques, or enjoying the vibrant culture of Dallas. I believe that a friendly attitude and a good sense of humor go a long way, so let's create something amazing together!</p>
             </div>
-            <Image src={"/projects/" + '../src/assets/portrait03.jpg'} alt="aris mercedes portrait" width="1200" height="600" class="object-cover order-1 lg:order-2 lg:max-w-96"></Image>
+            <Image src={portrait03} alt="aris mercedes portrait" width="1200" height="600" class="object-cover order-1 lg:order-2 lg:max-w-96"></Image>
         </div>
     </section>
 </BaseLayout>
