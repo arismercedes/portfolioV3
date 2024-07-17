@@ -6,5 +6,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [
     icon(),
-    tailwind()]
+    tailwind()],
+  site: 'https://arismercedes.com'
 });

@@ -24,7 +24,7 @@ const featuredProjects = allProjects.slice(0,numberOfProjects);
 				<p class="text-md md:text-xl mt-[1.5em] mb-[2em]"> Dive into my portfolio to explore vibrant designs that blend creativity with precision. Discover how my expertise can contribute to the success of your creative team.</p>
 				<LinkButton classes="" url="#work" theme="primary">View Work</LinkButton>
 			</div>
-			<Image class="m-auto bottom-0 self-end w-[250px] sm:w-[350px] md:w-[600px]" src={Astro.url.origin + "/" + "src/assets/portrait01.png"} alt="Portrait of Aris Mercedes" width="600" height="899"/>
+			<Image class="m-auto bottom-0 self-end w-[250px] sm:w-[350px] md:w-[600px]" src={Astro.site + "/src/assets/portrait01.png"} alt="Portrait of Aris Mercedes" width="600" height="899"/>
 			
 		</section>
 
@@ -32,7 +32,7 @@ const featuredProjects = allProjects.slice(0,numberOfProjects);
 			<h2 id="work" class="mb-12 font-bold text-3xl sm:text-5xl text-center">Featured Work</h2>
 			<Grid classes="f-grid max-w-screen-xl m-auto">
 				{featuredProjects.map((project) => (
-					<ProjectCard title={project.data.title} type={project.data.type} url={"/projects/" + project.data.url} thumbnailUrl={Astro.url.origin + "/" + project.data.thumbnail.src} thumbnailAlt={project.data.thumbnail.alt}/>
+					<ProjectCard title={project.data.title} type={project.data.type} url={"/projects/" + project.data.url} thumbnailUrl={Astro.site + "/" + project.data.thumbnail.src} thumbnailAlt={project.data.thumbnail.alt}/>
 				))}
 			</Grid>
 

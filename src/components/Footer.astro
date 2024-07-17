@@ -16,12 +16,12 @@ let currentYear = currentDate.getFullYear();
             <p>&copy{currentYear} Aris Mercedes <br> All Rights Reserved</p>
         </div>
         <ul class="flex flex-col gap-5 capitalize text-xl">
-            <li><a href={indexPath}>Home</a></li>
-            <li><a href={indexPath + "/work"}>Work</a></li>
-            <li><a href={indexPath + "/about"}>About</a></li>
-            <li><a href={indexPath + "/contact"}>Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/work">Work</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
-        <LinkButton classes="self-center md:self-baseline" url={indexPath + "/contact"} theme='light'>Say Hi</LinkButton>
+        <LinkButton classes="self-center md:self-baseline" url="/contact" theme='light'>Say Hi</LinkButton>
     </div>
 </footer>
 
